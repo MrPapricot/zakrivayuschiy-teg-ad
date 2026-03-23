@@ -1,1 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-main: 'Inter-Variable';
+    --font-pixeled: 'PressStart2P';
+    --font-weight_regular: 400;
+    --font-weight_title: 700;
+    --button-hover_animation-time: 0.3s;
+    
+    --sd__header_title_font-size: 65px;
+    --sd__header_subtitle_font-size: 23px;
+    --sd__stretch_inline-size: clamp(320px, 55dvi, 1440px);
+    --sd__header_block-size: 368px;
+    --sd__section_header_padding-block: 3px;
+    --sd__save-button_flex-direction: row;
+    --sd__save-button_image-size: 21px;
+    --sd__save-dialog_inline-size: clamp(353px, 30dvi, 600px);
+}
