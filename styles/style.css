@@ -83,6 +83,42 @@
 
 .section_image {
   inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+.section_image_wrapper {
+  padding: 0;
+  margin: 0;
+  inline-size: 100%;
+  position: relative;
+  block-size: auto;
+}
+
+.section_image_watermark {
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  color: black;
+  font-family: var(--font-pixeled);
+  font-size: 14px;
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  right: var(--sd__section_image_watermark_right);
+    text-shadow:
+      calc(-1 * var(--watermark_shadow_size)) 0 var(--watermark_text_shadow), 
+      0 var(--watermark_shadow_size) var(--watermark_text_shadow), 
+      var(--watermark_shadow_size) 0 var(--watermark_text_shadow), 
+      0 calc(-1 * var(--watermark_shadow_size)) var(--watermark_text_shadow);
+}
+
+@supports (text-stroke: 1px) or (-webkit-text-stroke: 1px) {
+  .section_image_watermark {
+    color: black;
+    text-shadow: none;
+    -webkit-text-stroke: var(--watermark_shadow_size) var(--watermark_text_shadow); 
+    text-stroke: var(--watermark_shadow_size) var(--watermark_text_shadow);
+  }
 }
 
 .section_footer {
@@ -205,12 +241,12 @@
   
   z-index: 0;
   
-  transition: transform var(--button-hover_animation-time) linear;
+  transition: transform var(--button-hover_animation-time) ease-in-out;
 }
 
 .section_footer_like-block_button::after {
   content: 'Like';
-  transition: color var(--button-hover_animation-time) linear;
+  transition: color var(--button-hover_animation-time) ease-in-out;
   position: relative;
 }
 
@@ -322,6 +358,7 @@
 
 @media (width <= 375px) {
   :root {
+    --sd__section_image_watermark_right: 13px;
     --sd__header_title_font-size: 49px;
     --sd__header_subtitle_font-size: 14px;
     --sd__stretch_inline-size: 100%;
@@ -348,4 +385,33 @@
   .section_footer_like-block_button:hover::after {
     color: black;
   }
+}
+
+
+.section:nth-of-type(2) .section_image {
+  filter: invert(100%);
+}
+
+.section:nth-of-type(3) .section_image {
+  filter: brightness(200%) sepia(70%) contrast(150%);
+}
+
+.section:nth-of-type(4) .section_image {
+  filter: grayscale(100%);
+}
+
+.section:nth-of-type(5) .section_image {
+  filter: saturate(180%);
+}
+
+.section:nth-of-type(6) .section_image {
+  filter: hue-rotate(40deg);
+}
+
+.section:nth-of-type(7) .section_image {
+  filter: invert(20%) hue-rotate(-110deg);
+}
+
+.section:nth-of-type(8) .section_image {
+  filter: blur(2px) sepia(140%);
 }
