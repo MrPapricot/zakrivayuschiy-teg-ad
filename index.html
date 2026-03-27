@@ -232,11 +232,9 @@
         <p class="save-dialog_text">
           Вставьте дискету, чтобы продолжить
         </p>
-        <form method="dialog" class="save-dialog_form">
-          <button class="save-dialog_button">
-            OK
-          </button>
-        </form>
+        <button type="button" class="save-dialog_button" onclick="window['save-dialog'].close()">
+          OK
+        </button>
       </div>
     </dialog>
     <script src="./scripts/like.js"></script>
