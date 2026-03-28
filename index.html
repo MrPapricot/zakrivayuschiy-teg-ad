@@ -222,7 +222,7 @@
         </div>
       </section>
     </main>
-    <button type="button" class="save-button" onclick="window['save-dialog'].showModal()">
+    <button type="button" class="save-button" onclick="window['save-dialog'].showModal(); return false;">
       <img alt="Картинку ю ноу" class="save-button_image" src="svg/floppy.svg">
       Сохранить на память
     </button>
@@ -232,7 +232,7 @@
         <p class="save-dialog_text">
           Вставьте дискету, чтобы продолжить
         </p>
-        <button type="button" class="save-dialog_button" onclick="window['save-dialog'].close()">
+        <button type="button" class="save-dialog_button" onclick="window['save-dialog'].close(); return false;">
           OK
         </button>
       </div>
