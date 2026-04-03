@@ -222,17 +222,17 @@
         </div>
       </section>
     </main>
-    <button type="button" class="save-button" popovertarget="save-dialog" popovertargetaction="show">
+    <button type="button" class="save-button" onclick="document.getElementById('save-dialog').showModal();">
       <img alt="Картинку ю ноу" class="save-button_image" src="svg/floppy.svg">
       <span>Сохранить на память</span>
     </button>
-    <dialog popover id="save-dialog" class="save-dialog">
+    <dialog id="save-dialog" class="save-dialog">
       <div class="dialog-content">
         <img alt="Картинку ю ноу" class="save-dialog_image" src="svg/floppy.svg"/>
         <p class="save-dialog_text">
           Вставьте дискету, чтобы продолжить
         </p>
-        <button type="submit" class="save-dialog_button" popovertarget="save-dialog" popovertargetaction="hide">
+        <button type="button" class="save-dialog_button" onclick="document.getElementById('save-dialog').close();">
           <span>OK</span>
         </button>
       </div>
